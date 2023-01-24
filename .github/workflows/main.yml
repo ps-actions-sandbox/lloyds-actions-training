@@ -1,6 +1,12 @@
 name: My Testworkflow
 
-on: [push, workflow_dispatch]
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        type: environment
+        required: true
 
 jobs:
   Build:
